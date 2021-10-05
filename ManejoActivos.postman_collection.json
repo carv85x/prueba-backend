@@ -1,0 +1,889 @@
+{
+	"info": {
+		"_postman_id": "39c17943-be4f-4cc8-928a-6829726f64a5",
+		"name": "Manejo Activos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Activo - Crear 1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Escritorio\",\r\n    \"descripcion\":\"Estacion para desarrollador\",\r\n    \"tipo\":\"Mueble\",\r\n    \"serial\":\"E1\",\r\n    \"noInventario\":\"1\",\r\n    \"peso\":5,\r\n    \"alto\":1,\r\n    \"ancho\":3,\r\n    \"valorCompra\":500000,\r\n    \"fechaCompra\":\"2021-01-03\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/activos/activo/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"activos",
+						"activo",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Activo - Crear 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Computador 1\",\r\n    \"descripcion\":\"Computador para desarrollador\",\r\n    \"tipo\":\"Computador\",\r\n    \"serial\":\"2\",\r\n    \"noInventario\":\"2\",\r\n    \"peso\":0.2,\r\n    \"alto\":0.3,\r\n    \"ancho\":0.5,\r\n    \"valorCompra\":1500000,\r\n    \"fechaCompra\":\"2021-01-01\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/activos/activo/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"activos",
+						"activo",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Activo - Crear 3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"iPhone\",\r\n    \"descripcion\":\"Smartphone iPhone\",\r\n    \"tipo\":\"Celular\",\r\n    \"serial\":\"3\",\r\n    \"noInventario\":\"3\",\r\n    \"peso\":0.01,\r\n    \"alto\":0.05,\r\n    \"ancho\":0.02,\r\n    \"valorCompra\":3000000,\r\n    \"fechaCompra\":\"2021-01-05\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/activos/activo/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"activos",
+						"activo",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Activo - Crear 4",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Oficina Desarrollo\",\r\n    \"descripcion\":\"Oficina de desarrollo\",\r\n    \"tipo\":\"Inmueble\",\r\n    \"serial\":\"4\",\r\n    \"noInventario\":\"4\",\r\n    \"peso\":1000,\r\n    \"alto\":3,\r\n    \"ancho\":25,\r\n    \"valorCompra\":50000000,\r\n    \"fechaCompra\":\"2021-01-01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/activos/activo/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"activos",
+						"activo",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Activo - Crear Error 406 (Tipo Nulo)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"iPhone\",\r\n    \"descripcion\":\"Smartphone iPhone\",\r\n  \r\n    \"serial\":\"5\",\r\n    \"noInventario\":\"5\",\r\n    \"peso\":0.01,\r\n    \"alto\":0.05,\r\n    \"ancho\":0.02,\r\n    \"valorCompra\":3000000,\r\n    \"fechaCompra\":\"2021-01-07\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/activos/activo/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"activos",
+						"activo",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Activo - Actualizar",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"id\": 4,\r\n    \"nombre\":\"Oficina Desarrollo\",\r\n    \"descripcion\":\"Oficina de desarrollo\",\r\n    \"tipo\":\"Inmueble\",\r\n    \"serial\":\"4\",\r\n    \"noInventario\":\"4\",\r\n    \"peso\":1000,\r\n    \"alto\":3,\r\n    \"ancho\":25,\r\n    \"valorCompra\":70000000,\r\n    \"fechaCompra\":\"2021-01-01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/activos/activo/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"activos",
+						"activo",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Activo - Actualizar Error 500 (ID Nulo)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"nombre\":\"activo1\",\r\n    \"descripcion\":\"algo3\",\r\n    \"tipo\":\"inmueble\",\r\n    \"serial\":\"12345\",\r\n    \"noInventario\":\"1\",\r\n    \"peso\":0.5,\r\n    \"alto\":0.4,\r\n    \"ancho\":0.3,\r\n    \"valorCompra\":200000,\r\n    \"fechaCompra\":\"2021-01-01\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/activos/activo/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"activos",
+						"activo",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Activo - Obtener Por Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/activos/activo/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"activos",
+						"activo",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Activo - Borrar Por Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/activos/activo/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"activos",
+						"activo",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Activo - Obtener Por Id Error 404 (No Existe ID 5)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/activos/activo/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"activos",
+						"activo",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Activo - Obtener Por Serial",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/activos/activo/serial/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"activos",
+						"activo",
+						"serial",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Activo - Obtener Por Serial Error 404 (No Existe Serial 6)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/activos/activo/serial/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"activos",
+						"activo",
+						"serial",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Activo - Obtener Por Tipo",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/activos/activo/tipo/inmueble",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"activos",
+						"activo",
+						"tipo",
+						"inmueble"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Activo - Obtener Por Tipo Error 404 (No Existe Tipo Maquinaria)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/activos/activo/tipo/Maquinaria",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"activos",
+						"activo",
+						"tipo",
+						"Maquinaria"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Activo - Obtener Por Fecha",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/activos/activo/fecha/2021-01-01",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"activos",
+						"activo",
+						"fecha",
+						"2021-01-01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Activo - Obtener Por Fecha Error 404 (No Existen Activos Comprados en 2020)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/activos/activo/fecha/2020-01-02",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"activos",
+						"activo",
+						"fecha",
+						"2020-01-02"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Activo - Obtener Todos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/activos/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"activos",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Empleado - Obtener Todos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/empleados",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"empleados"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Empleado - Obtener Por Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/empleados/empleado/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"empleados",
+						"empleado",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Empleado - Crear 1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"noPersonal\":\"E123\",\r\n    \"nombre\":\"Camilo\",\r\n    \"apellido\":\"Rodriguez\",\r\n    \"fechaNacimiento\":\"1985-08-13\",\r\n    \"cedula\":\"123456789\",\r\n    \"cargo\":\"Desarrollador\",\r\n    \"area\":\"Desarrollo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/empleados/empleado",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"empleados",
+						"empleado"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Empleado - Crear 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"noPersonal\":\"E124\",\r\n    \"nombre\":\"John\",\r\n    \"apellido\":\"Smith\",\r\n    \"fechaNacimiento\":\"1987-01-15\",\r\n    \"cedula\":\"223456789\",\r\n    \"cargo\":\"QA Analista\",\r\n    \"area\":\"Desarrollo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/empleados/empleado",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"empleados",
+						"empleado"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Empleado - Crear 3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"noPersonal\": \"E126\",\r\n    \"nombre\": \"Diana\",\r\n    \"apellido\": \"Ross\",\r\n    \"fechaNacimiento\": \"1980-11-20T00:00:00.000+00:00\",\r\n    \"cedula\": \"323456789\",\r\n    \"cargo\": \"Gerente\",\r\n    \"area\": \"Desarrollo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/empleados/empleado",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"empleados",
+						"empleado"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Empleado - Crear Error 406 (Valor de Cargo Nulo)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"noPersonal\": \"E126\",\r\n    \"nombre\": \"Muhammed\",\r\n    \"apellido\": \"Ali\",\r\n    \"fechaNacimiento\": \"1967-01-01\",\r\n    \"cedula\": \"423456789\",\r\n\r\n    \"area\": \"Desarrollo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/empleados/empleado",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"empleados",
+						"empleado"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Area - Crear",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"noArea\":\"1\",\r\n    \"nombre\":\"Desarrollo\",\r\n    \"descripcion\":\"Area de desarrollo\",\r\n    \"ciudad\":\"Bogota D.C.\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/areas/area/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"areas",
+						"area",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Area - Actualizar",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":1,\r\n    \"noArea\":\"A123\",\r\n    \"nombre\":\"Area 1\",\r\n    \"descripcion\":\"Algo Nuevo Area 1\",\r\n    \"ciudad\":\"Bogota DC\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/areas/area/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"areas",
+						"area",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Area - Obtener Por Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":1,\r\n    \"noArea\":\"A123\",\r\n    \"nombre\":\"Area 1\",\r\n    \"descripcion\":\"Algo Nuevo Area 1\",\r\n    \"ciudad\":\"Bogota DC\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/areas/area/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"areas",
+						"area",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Area - Obtener Por No",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":1,\r\n    \"noArea\":\"A123\",\r\n    \"nombre\":\"Area 1\",\r\n    \"descripcion\":\"Algo Nuevo Area 1\",\r\n    \"ciudad\":\"Bogota DC\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/areas/area/no/A123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"areas",
+						"area",
+						"no",
+						"A123"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Area - Obtener Todas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":1,\r\n    \"noArea\":\"A123\",\r\n    \"nombre\":\"Area 1\",\r\n    \"descripcion\":\"Algo Nuevo Area 1\",\r\n    \"ciudad\":\"Bogota DC\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/areas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"areas"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
