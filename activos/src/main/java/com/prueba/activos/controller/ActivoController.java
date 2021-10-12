@@ -1,5 +1,6 @@
 package com.prueba.activos.controller;
 
+
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;

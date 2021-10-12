@@ -92,7 +92,7 @@ public class InventarioController {
 	public ResponseEntity<?> obtenerPorId(@PathVariable long id) {
 
 		return new ResponseEntity<> (
-				servicio.obtenerInventario(),
+				servicio.obtenerPorId(id),
 				HttpStatus.OK
 				);	
 	}
@@ -106,17 +106,8 @@ public class InventarioController {
 				);	
 	}
 
-	@GetMapping("/inventario/noasig/{noasig}")
-	public ResponseEntity<?> obtenerPorNoAsignacion(String noAsig) {
-		
-		return new ResponseEntity<> (
-				servicio.obtenerPorNoAsignacion(noAsig),
-				HttpStatus.OK
-				);
-	}
-
 	@GetMapping("/inventario/tipo/{tipo}")
-	public ResponseEntity<?> obtenerPorAsignacionTipo(String tipo) {
+	public ResponseEntity<?> obtenerPorAsignacionTipo(@PathVariable String tipo) {
 		
 		return new ResponseEntity<> (
 				servicio.obtenerPorAsignacionTipo(tipo),

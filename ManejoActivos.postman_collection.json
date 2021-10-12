@@ -12,7 +12,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"nombre\":\"Escritorio\",\r\n    \"descripcion\":\"Estacion para desarrollador\",\r\n    \"tipo\":\"Mueble\",\r\n    \"serial\":\"E1\",\r\n    \"noInventario\":\"1\",\r\n    \"peso\":5,\r\n    \"alto\":1,\r\n    \"ancho\":3,\r\n    \"valorCompra\":500000,\r\n    \"fechaCompra\":\"2021-01-03\"\r\n\r\n}",
+					"raw": "{\r\n    \"nombre\":\"Escritorio\",\r\n    \"descripcion\":\"Estacion para desarrollador\",\r\n    \"tipo\":\"Mueble\",\r\n    \"serial\":\"E1\",\r\n    \"noInventario\": null,\r\n    \"peso\":5,\r\n    \"alto\":1,\r\n    \"ancho\":3,\r\n    \"valorCompra\":500000,\r\n    \"fechaCompra\":\"2021-01-03\"\r\n\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -42,7 +42,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"nombre\":\"Computador 1\",\r\n    \"descripcion\":\"Computador para desarrollador\",\r\n    \"tipo\":\"Computador\",\r\n    \"serial\":\"2\",\r\n    \"noInventario\":\"2\",\r\n    \"peso\":0.2,\r\n    \"alto\":0.3,\r\n    \"ancho\":0.5,\r\n    \"valorCompra\":1500000,\r\n    \"fechaCompra\":\"2021-01-01\"\r\n\r\n}",
+					"raw": "{\r\n    \"nombre\":\"Computador 1\",\r\n    \"descripcion\":\"Computador para desarrollador\",\r\n    \"tipo\":\"Computador\",\r\n    \"serial\":\"2\",\r\n    \"noInventario\":null,\r\n    \"peso\":0.2,\r\n    \"alto\":0.3,\r\n    \"ancho\":0.5,\r\n    \"valorCompra\":1500000,\r\n    \"fechaCompra\":\"2021-01-01\"\r\n\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -72,7 +72,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"nombre\":\"iPhone\",\r\n    \"descripcion\":\"Smartphone iPhone\",\r\n    \"tipo\":\"Celular\",\r\n    \"serial\":\"3\",\r\n    \"noInventario\":\"3\",\r\n    \"peso\":0.01,\r\n    \"alto\":0.05,\r\n    \"ancho\":0.02,\r\n    \"valorCompra\":3000000,\r\n    \"fechaCompra\":\"2021-01-05\"\r\n\r\n}",
+					"raw": "{\r\n    \"nombre\":\"iPhone\",\r\n    \"descripcion\":\"Smartphone iPhone\",\r\n    \"tipo\":\"Celular\",\r\n    \"serial\":\"3\",\r\n    \"noInventario\":null,\r\n    \"peso\":0.01,\r\n    \"alto\":0.05,\r\n    \"ancho\":0.02,\r\n    \"valorCompra\":3000000,\r\n    \"fechaCompra\":\"2021-01-05\"\r\n\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -102,7 +102,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"nombre\":\"Oficina Desarrollo\",\r\n    \"descripcion\":\"Oficina de desarrollo\",\r\n    \"tipo\":\"Inmueble\",\r\n    \"serial\":\"4\",\r\n    \"noInventario\":\"4\",\r\n    \"peso\":1000,\r\n    \"alto\":3,\r\n    \"ancho\":25,\r\n    \"valorCompra\":50000000,\r\n    \"fechaCompra\":\"2021-01-01\"\r\n}",
+					"raw": "{\r\n    \"nombre\":\"Oficina Desarrollo\",\r\n    \"descripcion\":\"Oficina de desarrollo\",\r\n    \"tipo\":\"Inmueble\",\r\n    \"serial\":\"4\",\r\n  \r\n    \"peso\":1000,\r\n    \"alto\":3,\r\n    \"ancho\":25,\r\n    \"valorCompra\":50000000,\r\n    \"fechaCompra\":\"2021-01-01\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -880,6 +880,226 @@
 					"port": "7000",
 					"path": [
 						"areas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inventario - Crear",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n    \"noInventario\":\"I1\",\r\n    \"activo\":{\r\n        \"id\":1,\r\n        \"nombre\":\"Escritorio\",\r\n        \"descripcion\":\"Estacion para desarrollador\",\r\n        \"tipo\":\"Mueble\",\r\n        \"serial\":\"E1\",\r\n        \"noInventario\": null,\r\n        \"peso\":5,\r\n        \"alto\":1,\r\n        \"ancho\":3,\r\n        \"valorCompra\":500000,\r\n        \"fechaCompra\":\"2021-01-03\"\r\n    },\r\n    \"area\":     \r\n    {\r\n        \"id\": 1,\r\n        \"noArea\": \"1\",\r\n        \"nombre\": \"Desarrollo\",\r\n        \"descripcion\": \"Area de desarrollo\",\r\n        \"ciudad\": \"Bogota D.C.\"\r\n    },\r\n    \"asignacionTipo\":\"AREA\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/inventario/inventario",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"inventario",
+						"inventario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inventario - Crear 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n    \"noInventario\":\"I2\",\r\n    \"activo\":{\r\n        \"id\":3,\r\n        \"nombre\":\"Escritorio\",\r\n        \"descripcion\":\"Estacion para desarrollador\",\r\n        \"tipo\":\"Mueble\",\r\n        \"serial\":\"E1\",\r\n        \"noInventario\": null,\r\n        \"peso\":5,\r\n        \"alto\":1,\r\n        \"ancho\":3,\r\n        \"valorCompra\":500000,\r\n        \"fechaCompra\":\"2021-01-03\"\r\n    },\r\n    \"area\":     \r\n    {\r\n        \"id\": 1,\r\n        \"noArea\": \"1\",\r\n        \"nombre\": \"Desarrollo\",\r\n        \"descripcion\": \"Area de desarrollo\",\r\n        \"ciudad\": \"Bogota D.C.\"\r\n    },\r\n    \"asignacionTipo\":\"AREA\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/inventario/inventario",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"inventario",
+						"inventario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inventario - Obtener Todos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n    \"noInventario\":\"I2\",\r\n    \"activo\":{\r\n        \"id\":1,\r\n        \"nombre\":\"Escritorio\",\r\n        \"descripcion\":\"Estacion para desarrollador\",\r\n        \"tipo\":\"Mueble\",\r\n        \"serial\":\"E1\",\r\n        \"noInventario\": null,\r\n        \"peso\":5,\r\n        \"alto\":1,\r\n        \"ancho\":3,\r\n        \"valorCompra\":500000,\r\n        \"fechaCompra\":\"2021-01-03\"\r\n    },\r\n    \"noAsignacion\":\"E123\",\r\n    \"asignacionTipo\":\"EMPLEADO\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/inventario",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"inventario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inventario - Actualizar",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":2,\r\n    \"noInventario\":\"I2\",\r\n    \"activo\":{\r\n        \"id\": 3,\r\n        \"nombre\": \"iPhone\",\r\n        \"descripcion\": \"Smartphone iPhone\",\r\n        \"tipo\": \"Celular\",\r\n        \"serial\": \"3\",\r\n        \"peso\": 0.01,\r\n        \"alto\": 0.05,\r\n        \"ancho\": 0.02,\r\n        \"valorCompra\": 3000000.0,\r\n        \"fechaCompra\": \"2021-01-05T00:00:00.000+00:00\"\r\n    },\r\n    \"empleado\":     \r\n    {\r\n        \"id\": 1,\r\n        \"noPersonal\": \"E123\",\r\n        \"nombre\": \"Camilo\",\r\n        \"apellido\": \"Rodriguez\",\r\n        \"fechaNacimiento\": \"1985-08-13T00:00:00.000+00:00\",\r\n        \"cedula\": \"123456789\",\r\n        \"cargo\": \"Desarrollador\",\r\n        \"area\": \"Desarrollo\"\r\n    },\r\n    \"asignacionTipo\":\"EMPLEADO\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/inventario/inventario/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"inventario",
+						"inventario",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inventario - Obtener por Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":2,\r\n    \"noInventario\":\"I2\",\r\n    \"activo\":{\r\n        \"id\": 3,\r\n        \"nombre\": \"iPhone\",\r\n        \"descripcion\": \"Smartphone iPhone\",\r\n        \"tipo\": \"Celular\",\r\n        \"serial\": \"3\",\r\n        \"peso\": 0.01,\r\n        \"alto\": 0.05,\r\n        \"ancho\": 0.02,\r\n        \"valorCompra\": 3000000.0,\r\n        \"fechaCompra\": \"2021-01-05T00:00:00.000+00:00\"\r\n    },\r\n    \"empleado\":     \r\n    {\r\n        \"id\": 1,\r\n        \"noPersonal\": \"E123\",\r\n        \"nombre\": \"Camilo\",\r\n        \"apellido\": \"Rodriguez\",\r\n        \"fechaNacimiento\": \"1985-08-13T00:00:00.000+00:00\",\r\n        \"cedula\": \"123456789\",\r\n        \"cargo\": \"Desarrollador\",\r\n        \"area\": \"Desarrollo\"\r\n    },\r\n    \"asignacionTipo\":\"EMPLEADO\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/inventario/inventario/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"inventario",
+						"inventario",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inventario - Obtener por No",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":2,\r\n    \"noInventario\":\"I2\",\r\n    \"activo\":{\r\n        \"id\": 3,\r\n        \"nombre\": \"iPhone\",\r\n        \"descripcion\": \"Smartphone iPhone\",\r\n        \"tipo\": \"Celular\",\r\n        \"serial\": \"3\",\r\n        \"peso\": 0.01,\r\n        \"alto\": 0.05,\r\n        \"ancho\": 0.02,\r\n        \"valorCompra\": 3000000.0,\r\n        \"fechaCompra\": \"2021-01-05T00:00:00.000+00:00\"\r\n    },\r\n    \"empleado\":     \r\n    {\r\n        \"id\": 1,\r\n        \"noPersonal\": \"E123\",\r\n        \"nombre\": \"Camilo\",\r\n        \"apellido\": \"Rodriguez\",\r\n        \"fechaNacimiento\": \"1985-08-13T00:00:00.000+00:00\",\r\n        \"cedula\": \"123456789\",\r\n        \"cargo\": \"Desarrollador\",\r\n        \"area\": \"Desarrollo\"\r\n    },\r\n    \"asignacionTipo\":\"EMPLEADO\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/inventario/inventario/no/i1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"inventario",
+						"inventario",
+						"no",
+						"i1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inventario - Obtener por Tipo",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":2,\r\n    \"noInventario\":\"I2\",\r\n    \"activo\":{\r\n        \"id\": 3,\r\n        \"nombre\": \"iPhone\",\r\n        \"descripcion\": \"Smartphone iPhone\",\r\n        \"tipo\": \"Celular\",\r\n        \"serial\": \"3\",\r\n        \"peso\": 0.01,\r\n        \"alto\": 0.05,\r\n        \"ancho\": 0.02,\r\n        \"valorCompra\": 3000000.0,\r\n        \"fechaCompra\": \"2021-01-05T00:00:00.000+00:00\"\r\n    },\r\n    \"empleado\":     \r\n    {\r\n        \"id\": 1,\r\n        \"noPersonal\": \"E123\",\r\n        \"nombre\": \"Camilo\",\r\n        \"apellido\": \"Rodriguez\",\r\n        \"fechaNacimiento\": \"1985-08-13T00:00:00.000+00:00\",\r\n        \"cedula\": \"123456789\",\r\n        \"cargo\": \"Desarrollador\",\r\n        \"area\": \"Desarrollo\"\r\n    },\r\n    \"asignacionTipo\":\"EMPLEADO\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/inventario/inventario/tipo/area",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"inventario",
+						"inventario",
+						"tipo",
+						"area"
 					]
 				}
 			},

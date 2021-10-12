@@ -2,16 +2,23 @@ package com.prueba.activos.model;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name = "activos")
@@ -34,8 +41,8 @@ public class ActivoModel {
 	@NotBlank
 	private String serial;
 	
-	@NotBlank 
-	private String noInventario;
+	@OneToOne(fetch = FetchType.LAZY, mappedBy = "activo")
+	private InventarioModel inventario;
 	
 	@NotNull
 	private float peso;
@@ -91,13 +98,14 @@ public class ActivoModel {
 	public void setSerial(String serial) {
 		this.serial = serial;
 	}
-
-	public String getNoInventario() {
-		return noInventario;
+	
+	@JsonManagedReference
+	public InventarioModel getInventario() {
+		return inventario;
 	}
 
-	public void setNoInventario(String noInventario) {
-		this.noInventario = noInventario;
+	public void setInventario(InventarioModel inventario) {
+		this.inventario = inventario;
 	}
 
 	public float getPeso() {
@@ -143,8 +151,8 @@ public class ActivoModel {
 	@Override
 	public String toString() {
 		return "ActivoModel [id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", tipo=" + tipo
-				+ ", serial=" + serial + ", noInventario=" + noInventario + ", peso=" + peso + ", alto=" + alto
+				+ ", serial=" + serial + ", inventario=" + inventario + ", peso=" + peso + ", alto=" + alto
 				+ ", ancho=" + ancho + ", valorCompra=" + valorCompra + ", fechaCompra=" + fechaCompra + "]";
-	}		
+	}	
 	
 }

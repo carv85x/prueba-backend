@@ -1,5 +1,7 @@
 package com.prueba.activos.exception;
 
+import java.sql.SQLIntegrityConstraintViolationException;
+
 import javax.persistence.EntityNotFoundException;
 import javax.validation.ConstraintViolationException;
 
@@ -41,6 +43,20 @@ public class RestExceptionManejador extends ResponseEntityExceptionHandler {
 		Mensaje error = new Mensaje(HttpStatus.INTERNAL_SERVER_ERROR, "Atributo nulo encontrado", e.getMessage());
 		
 		return new ResponseEntity<>(error, HttpStatus.INTERNAL_SERVER_ERROR);
+	}
+	
+	@ExceptionHandler(SQLIntegrityConstraintViolationException.class)
+	private ResponseEntity<Mensaje> manejarSQLIntegrityConstraintViolationException(SQLIntegrityConstraintViolationException e) {
+		Mensaje error = new Mensaje(HttpStatus.INTERNAL_SERVER_ERROR, "ID de activo invalido", e.getMessage());
+		
+		return new ResponseEntity<>(error, HttpStatus.INTERNAL_SERVER_ERROR);
+	}
+	
+	@ExceptionHandler(IllegalArgumentException.class)
+	private ResponseEntity<Mensaje> manejarIllegalArgumentException(IllegalArgumentException e) {
+		Mensaje error = new Mensaje(HttpStatus.NOT_ACCEPTABLE, "Tipo de asignacion invalido", e.getMessage());
+		
+		return new ResponseEntity<>(error, HttpStatus.NOT_ACCEPTABLE);
 	}
 
 }

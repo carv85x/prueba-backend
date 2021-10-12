@@ -12,7 +12,6 @@ public interface InventarioService {
 	public List<InventarioModel> obtenerInventario();
 	public InventarioModel obtenerPorId(long id);
 	public List<InventarioModel> obtenerPorNoInventario(String noInventario);
-	public List<InventarioModel> obtenerPorNoAsignacion(String noAsignacion);
 	public List<InventarioModel> obtenerPorAsignacionTipo(String asignacionTipo);
 
 }
