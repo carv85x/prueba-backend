@@ -41,7 +41,7 @@ public class ActivoModel {
 	@NotBlank
 	private String serial;
 	
-	@OneToOne(fetch = FetchType.LAZY, mappedBy = "activo")
+	@OneToOne(fetch = FetchType.EAGER, mappedBy = "activo")
 	private InventarioModel inventario;
 	
 	@NotNull
