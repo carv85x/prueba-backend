@@ -31,7 +31,7 @@ public class InventarioModel {
 	@NotBlank
 	private String noInventario;
 	
-	@OneToOne(fetch = FetchType.LAZY)
+	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "activo_id")
 	private ActivoModel activo;
 	
